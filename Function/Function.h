@@ -2,6 +2,7 @@
 #include<stdio.h>
 
 
-int Recursive(int  money);
 
-int Recursive2(int  money);
+int Recursive(int  hoursWorked);
+
+int Recursive2(int  hoursWorked);

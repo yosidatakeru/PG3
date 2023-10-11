@@ -1,21 +1,21 @@
 ﻿#include "Function.h"
 int workingTime = 9;
-int hourlyWage = 0;
+int workingHours = 0;
 int total = 0;
-int Recursive(int  money)
+int Recursive(int  hoursWorked)
 {
 	int total = 1072;
 	//ゴール
-	if (money >= workingTime)
+	if (hoursWorked >= workingTime)
 	{
 		return(0);
 	}
 
-	total *= money;
+	total *= hoursWorked;
 
-	printf("%d時間働いた一般的合計金額%d\n", money, total);
+	printf("%d時間働いた一般的合計金額%d円\n", hoursWorked, total);
 	//再起関数
-	return (1072 + Recursive(money + 1));
+	return (1072 + Recursive(hoursWorked + 1));
 
 
 }
@@ -40,10 +40,10 @@ int Recursive2(int  money)
 
 
 
-		hourlyWage = hourlyWage * 2 - 50;
+		workingHours = workingHours * 2 - 50;
 
-		total += hourlyWage;
-		printf("%d時間働いた再起敵合計金額%d\n", money, total);
+		total += workingHours;
+		printf("%d時間働いた再起敵合計金額%d円\n", money, total);
 		return (total, Recursive2(money + 1));
 	}
 
@@ -54,13 +54,13 @@ int Recursive2(int  money)
 
 		//再起関数
 
-		; hourlyWage = 100;
-		total += hourlyWage;
-		printf("%d時間働いた再起敵合計金額%d\n", money, total);
+		; workingHours = 100;
+		total += workingHours;
+		printf("%d時間働いた再起敵合計金額%d円\n", money, total);
 		return (total + Recursive2(money + 1));
 	}
 
-	printf("%d時間働いた再起敵合計金額%d\n", money, total);
+	printf("%d時間働いた再起敵合計金額%d円\n", money, total);
 	return (Recursive2(money + 1));
 
 }
