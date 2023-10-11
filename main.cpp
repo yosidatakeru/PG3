@@ -1,19 +1,21 @@
 ﻿#include<stdio.h>
 
 //時給
+int workingTime = 9;
 int Recursive(int  money)
 {
-
+	int total = 1072;
 	//ゴール
-	if (money >= 8)
+	if (money >= workingTime)
 	{
 		return(0);
 	}
 
-
-
+	total*= money;
+	
+	printf("%d時間働いた一般的合計金額%d\n",money ,total);
 	//再起関数
-	return(1072 + Recursive(money + 1));
+	return (1072+ Recursive(money + 1));
 
 
 }
@@ -25,14 +27,14 @@ int Recursive2(int  money)
 {
 	
 	//ゴール
-	if (money >= 8)
+	if (money >= workingTime)
 	{
-
+		
 		return(0);
 	}
 
 
-	if (money >= 1)
+	if (money >= 2)
 	{
 		//再起関数
 	
@@ -42,12 +44,12 @@ int Recursive2(int  money)
 		hourlyWage = hourlyWage * 2 - 50;
 	
 		total += hourlyWage;
-	
+		printf("%d時間働いた再起敵合計金額%d\n", money, total);
 		return (total,Recursive2(money + 1) );
 	}
 		
 	
-	if (money == 0)
+	if (money == 1)
 	{
 		
 		
@@ -55,12 +57,12 @@ int Recursive2(int  money)
 		
 		; hourlyWage = 100;
 		total += hourlyWage;
-		
+		printf("%d時間働いた再起敵合計金額%d\n", money, total);
 		return (total +Recursive2(money + 1));
 	}
 
-	
-
+	printf("%d時間働いた再起敵合計金額%d\n", money, total);
+	return (Recursive2(money + 1));
 
 }
 
@@ -80,12 +82,7 @@ int main()
 
 	}
 
-	if (result <= result2)
-	{
-		//再起処理
-		printf("再起処理価格高い\n");
-		printf("再起処理価格のほうが儲かる\n");
-	}
+	
 
 	printf("時給%d\n", result);
 	printf("再起時給%d\n", result2);
