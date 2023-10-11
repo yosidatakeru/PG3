@@ -5,7 +5,7 @@ int Recursive(int  money)
 {
 
 	//ゴール
-	if (money >= 9)
+	if (money >= 8)
 	{
 		return(0);
 	}
@@ -19,13 +19,15 @@ int Recursive(int  money)
 }
 
 
-
+int hourlyWage = 0;
+int total = 0;
 int Recursive2(int  money)
 {
-
+	
 	//ゴール
-	if (money >= 9)
+	if (money >= 8)
 	{
+
 		return(0);
 	}
 
@@ -33,14 +35,28 @@ int Recursive2(int  money)
 	if (money >= 1)
 	{
 		//再起関数
-		return(100 + Recursive2(money + 1) * 2 - 50);
+	
+	
+		
+	
+		hourlyWage = hourlyWage * 2 - 50;
+	
+		total += hourlyWage;
+	
+		return (total,Recursive2(money + 1) );
 	}
 		
 	
-	if (money < 1)
+	if (money == 0)
 	{
+		
+		
 		//再起関数
-		return(100 + Recursive2(money + 1));
+		
+		; hourlyWage = 100;
+		total += hourlyWage;
+		
+		return (total +Recursive2(money + 1));
 	}
 
 	
