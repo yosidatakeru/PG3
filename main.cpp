@@ -1,91 +1,135 @@
 ﻿#include<stdio.h>
+#include <Windows.h>
+#pragma region 関数ポインタハローワルド
+//void PrintHelloWorld(void)
+//{
+//	printf("HelloWorld\n");
+//}
+#pragma endregion
 
-//時給
-int workingTime = 9;
-int Recursive(int  money)
+
+#pragma region 関数ポインタの特徴
+//int add(int a, int b)
+//{
+//	return a + b;
+//}
+//
+//int sub(int a, int b)
+//{
+//	return a - b;
+//}
+#pragma endregion
+
+
+
+#pragma region 関数ポインタの特徴(配列)
+
+//int assiton(int a, int b)
+//{
+//	return a + b;
+//}
+//
+//
+//int subtraction(int a, int b)
+//{
+//	return a - b;
+//}
+//
+//
+//int multraction(int a, int b)
+//{
+//	return a * b;
+//}
+//
+//int division(int a, int b)
+//{
+//	return a / b;
+//}
+
+
+#pragma endregion
+
+typedef void (*PFunc)(int*);
+
+void DispResult(int* s)
 {
-	int total = 1072;
-	//ゴール
-	if (money >= workingTime)
-	{
-		return(0);
-	}
+	printf("%d秒待って実行\/", *s);
+}
+void setTimeout(PFunc P, int second)
+{
+	Sleep(second * 1000);
 
-	total*= money;
-	
-	printf("%d時間働いた一般的合計金額%d\n",money ,total);
-	//再起関数
-	return (1072+ Recursive(money + 1));
-
-
+	P(&second);
 }
 
-
-int hourlyWage = 0;
-int total = 0;
-int Recursive2(int  money)
+int main(void)
 {
+
 	
-	//ゴール
-	if (money >= workingTime)
+
+#pragma region 関数ポインタハローワルド
+	//////宣言変数と同じ用に関数の前に*をつけて()で囲む
+	////void (*pfunc)();
+	//////ここで中に入れる
+	////pfunc = PrintHelloWorld;
+
+	////printf("PrintHelloWrldのアドレス = %p\n ", PrintHelloWorld);
+	////printf("pfuncの内容 = %p\n", pfunc);
+	////pfunc();
+#pragma endregion
+
+#pragma region 関数ポインタの特徴
+	//int l = 114;
+	//int h = 514;
+
+	//int (*calc)(int, int);
+
+	//calc = add;
+	//printf("%d\n", calc(l, h));
+
+
+	//calc = sub;
+	//printf("%d\n", calc(l, h));
+#pragma endregion
+
+#pragma region 関数ポインタの特徴(配列)
+
+	/*int l = 33;
+	int h = 4;
+
+	int(*funcArr[4])(int, int) =
 	{
-		
-		return(0);
-	}
 
+	 assiton,
 
-	if (money >= 2)
+     subtraction,
+
+     multraction,
+
+     division 
+
+};
+
+	for (int i =0;i<4;i++)
 	{
-		//再起関数
-	
-	
-		
-	
-		hourlyWage = hourlyWage * 2 - 50;
-	
-		total += hourlyWage;
-		printf("%d時間働いた再起敵合計金額%d\n", money, total);
-		return (total,Recursive2(money + 1) );
-	}
-		
-	
-	if (money == 1)
-	{
-		
-		
-		//再起関数
-		
-		; hourlyWage = 100;
-		total += hourlyWage;
-		printf("%d時間働いた再起敵合計金額%d\n", money, total);
-		return (total +Recursive2(money + 1));
-	}
+		printf("%d\n", funcArr[i](l, h));
+	}*/
+#pragma endregion
 
-	printf("%d時間働いた再起敵合計金額%d\n", money, total);
-	return (Recursive2(money + 1));
 
-}
+	//関数ポインタのデメリット
+	//意見すると変数の代入にしか見えないので注意
+	//例　calc =add;
+	//回避方法
+	// 例　calc = &add;
 
-int main()
-{
-	//時間
-	int money = 0;
 
-	int result;
-	int result2;
-	result = Recursive(money);
-	result2 = Recursive2(money);
+	printf("start\n");
 
-	if (result >= result2)
-	{
-		printf("時給のほうが高い\n");
+	PFunc p;
+	p = DispResult;
+	setTimeout(p, 3);
 
-	}
-
-	
-
-	printf("時給%d\n", result);
-	printf("再起時給%d\n", result2);
 
 	return 0;
 }
