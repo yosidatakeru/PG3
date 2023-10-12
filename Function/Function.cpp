@@ -10,3 +10,8 @@ void setTimeout(PFunc p, int second)
 	Sleep(second * 1000);
 	p(&second);
 }
+
+int division(int a)
+{
+	return a % 2;
+}
