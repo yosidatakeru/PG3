@@ -2,7 +2,8 @@
 
 int main()
 {
-    
+  
+
     // サイコロを振る
     srand(time(nullptr));
     int dice = rand() % 6 + 1;
@@ -17,13 +18,14 @@ int main()
     p = DispResut;
     setTimeout(p, 3);
 
-    total = &division;
-    printf("%d\n", total(dice));
 
-  ;
+
+    total = &division;
+    
+
     // ゲームの結果を表示
     printf("サイコロの出目: %d\n", dice);
-    
+    printf("%d\n", total(dice));
     if ((total(dice) == 1&& userGuess == 1) || (total(dice) ==0  && userGuess == 2))
     {
         printf("当たり\n");
