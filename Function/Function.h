@@ -11,4 +11,3 @@ void DispResut(int* s);
 
 void setTimeout(PFunc p, int second);
 
-int division(int a);

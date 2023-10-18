@@ -1,5 +1,12 @@
 ﻿#include"Function/Function.h"
-
+int division(int dice)
+{
+    std::function<int(int)>fx = [](int dice)
+    {
+        return dice % 2;
+    };
+    return fx(dice);
+}
 int main()
 {
   

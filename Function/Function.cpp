@@ -11,11 +11,4 @@ void setTimeout(PFunc p, int second)
 	p(&second);
 }
 
-int division(int dice)
-{
-	std::function<int(int)>fx = [](int dice)
-	{
-		return dice % 2;
-	};
-	return fx(dice);
-}
+
