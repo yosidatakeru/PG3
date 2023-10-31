@@ -5,9 +5,3 @@
 //止めるためにインクルード
 #include <windows.h>
 #include<functional>
-typedef void (*PFunc)(int*);
-
-void DispResut(int* s);
-
-void setTimeout(PFunc p, int second);
-
