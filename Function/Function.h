@@ -1,7 +1,17 @@
 #pragma once
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-//止めるためにインクルード
-#include <windows.h>
-#include<functional>
+template<typename Type>
+
+class Function
+{
+public:
+	//メンバー変数
+	Type a;
+	Type b;
+
+	Type ClassFinction(Typea, Typeb): a(a), b(b);
+
+
+private:
+
+};
+}
