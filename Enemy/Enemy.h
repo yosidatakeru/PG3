@@ -19,8 +19,16 @@ public:
 private:
 	static void (Enemy::* spFuncTadle[])();
 	int enemyAction = true;
-	int enemySituation = 0;
-	int timeS = 0;
+	
+	int time = 0;
+
+	enum enemySituation
+	{
+		Attacks = 1,
+		Shoots = 2,
+		Withdrawals = 3,
+	};
+	enemySituation  phase_;
 	
 };
 

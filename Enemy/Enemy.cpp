@@ -18,15 +18,23 @@ void Enemy::Inil()
 void Enemy::Attack()
 {
 	printf("Attack\n");
+	
+	time = 0;
+	
+	phase_ = Enemy::Shoots;
 }
 
 void Enemy::Shoot()
 {
 	printf("Shoot\n");
+	time = 0;
+	phase_ = Enemy::Withdrawals;
 }
 void Enemy::Withdrawal()
 {
 	printf("Withdrawal\n");
+	time = 0;
+	phase_ = Enemy::Attacks;
 }
 
 
@@ -34,52 +42,76 @@ void Enemy::Withdrawal()
 
 void Enemy::Update()
 {
+	
+	phase_ = Attacks;
+
 	int enemyAction = true;
 	
 	while (enemyAction == true)
 	{
 		
-		timeS++;
-		if (timeS == 181)
-		{
-			timeS = 0;
-		}
+		time++;
 		
-		switch (enemySituation)
-		{
-		case 0:
+		//printf("%dƒ^ƒCƒ€\n", time);
+		
+		
+		
+		
+		
 			
-			if (timeS ==180)
+
+		switch (phase_)
+		{
+		case Enemy::Attacks:
+			if (time == 180)
 			{
 				(this->*spFuncTadle[0])();
-				enemySituation = 1;
+			}
+			break;
+
+
+
+		case Enemy::Shoots:
+			if (time == 180 )
+			{
+
+				(this->*spFuncTadle[1])();
+
+
 				
 			}
 
+
 			break;
 
-		case 1:
-			
-			if (timeS == 180)
-			{
-				(this->*spFuncTadle[1])();
-				enemySituation = 2;
-			}
-			break;
+		case Enemy::Withdrawals:
 
-		case 2:
-			
 
-			if (timeS == 180)
+			if (time == 180)
 			{
 				(this->*spFuncTadle[2])();
-				enemySituation = 0;
-				enemyAction = false;
-			}
 
+				
+				//enemyAction = false;
+				
+			}
 			break;
 
 		}
+			
+			
+			
+			
+			
+
+			
+			
+
+			
+
+	
+		
 
 	}
 }
+
