@@ -50,58 +50,20 @@ void Enemy::Update()
 	while (enemyAction == true)
 	{
 		
-		time++;
 		
-		//printf("%dƒ^ƒCƒ€\n", time);
-		
-		
-		
-		
-		
-			
-
-		switch (phase_)
-		{
-		case Enemy::Attacks:
-			if (time == 180)
+			for (int i = 0; i < 3;i++)
 			{
-				(this->*spFuncTadle[0])();
-			}
-			break;
+				
 
-
-
-		case Enemy::Shoots:
-			if (time == 180 )
-			{
-
-				(this->*spFuncTadle[1])();
-
+				(this->*spFuncTadle[i])();
 
 				
 			}
+		
+		
+			enemyAction = false;
 
-
-			break;
-
-		case Enemy::Withdrawals:
-
-
-			if (time == 180)
-			{
-				(this->*spFuncTadle[2])();
-
-				
-				//enemyAction = false;
-				
-			}
-			break;
-
-		}
-			
-			
-			
-			
+		
 			
 
 			
