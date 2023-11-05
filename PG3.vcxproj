@@ -130,10 +130,12 @@
     <ClCompile Include="Enemy\Enemy.cpp" />
     <ClCompile Include="Function\Function.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Min.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy\Enemy.h" />
     <ClInclude Include="Function\Function.h" />
+    <ClInclude Include="PG3_02_02\Min.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
