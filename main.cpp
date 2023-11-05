@@ -2,6 +2,7 @@
 #include<stdio.h>
 int main()
 { 
+
 	Min<int>b1(10, 20);
 	Min<float>b2(1.2, 3.4);
 	
