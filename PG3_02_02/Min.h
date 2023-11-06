@@ -11,9 +11,16 @@ public:
 	 Min(T1 height, T1 width) :  height(height), width(width){}
     
 	// ƒƒ“ƒoŠÖ”
-	T1 Size()
+	T1 add()
 	{
-		return static_cast<T1>(height + width);
+		if (height < width)
+		{
+			return width;
+		}
+		else
+		{
+			return height;
+		}
 	}
 
 };
