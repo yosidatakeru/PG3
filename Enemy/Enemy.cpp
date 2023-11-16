@@ -18,23 +18,22 @@ void Enemy::Inil()
 void Enemy::Attack()
 {
 	printf("Attack\n");
-	
-	time = 0;
-	
-	phase_ = Enemy::Shoots;
+	(this->*spFuncTadle[1])();
+
 }
 
 void Enemy::Shoot()
 {
 	printf("Shoot\n");
-	time = 0;
-	phase_ = Enemy::Withdrawals;
+	
+	(this->*spFuncTadle[2])();
 }
 void Enemy::Withdrawal()
 {
 	printf("Withdrawal\n");
-	time = 0;
-	phase_ = Enemy::Attacks;
+	
+	//(this->*spFuncTadle[0])();
+	
 }
 
 
@@ -43,37 +42,22 @@ void Enemy::Withdrawal()
 void Enemy::Update()
 {
 	
-	phase_ = Attacks;
+	//phase_ = Attacks;
 
 	int enemyAction = true;
 	
 	while (enemyAction == true)
 	{
 		
-		
-			for (int i = 0; i < 3;i++)
-			{
-				
 
-				(this->*spFuncTadle[i])();
+			(this->*spFuncTadle[0])();
+		
+		
 
-				
-			}
-		
-		
+
 			enemyAction = false;
 
-		
-			
-
-			
-			
-
-			
-
 	
-		
-
 	}
 }
 
