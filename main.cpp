@@ -2,12 +2,19 @@
 #include<stdio.h>
 int main()
 { 
-	Min<int>b1(10, 20);
-	Min<float>b2(1.2, 3.4);
-	Min<double>b3(10.3, 10.4);
+	Min<int,int>comperVal1(10, 20);
+	Min<int,float>comperVal2(12, 3.4f);
+	Min<int,double>comperVal3(10.3, 10.4);
 
-	printf("b1=%d\n", b1.add());
-	printf("b2=%f\n", b2.add());
-	printf("b2=%f\n", b3.add());
+	Min<float, float>comperVal4(20.0f, 15.0f);
+	Min<float, double>comperVal5(20.0f, 57.0);
+
+	Min<double, double>comperVal6(25.0, 63.0);
+	printf("b1=%d\n", comperVal1.comparison());
+	printf("b2=%d\n", comperVal2.comparison());
+	printf("b2=%d\n", comperVal3.comparison());
+	printf("b4=%f\n", comperVal4.comparison());
+	printf("b5=%f\n", comperVal5.comparison());
+	printf("b6=%f\n", comperVal6.comparison());
 	return 0;
 }
