@@ -1,12 +1,13 @@
-﻿#include"Function/Function.h"
-#include"Enemy/Enemy.h"
+﻿#include"Enemy/Enemy.h"
 int main()
 {
-    Enemy* enemy;
-     enemy = new Enemy;
+    Enemy* enemy = new Enemy;
+     
+    enemy->Initialze();
 
      enemy->Update();
 
+     delete enemy;
     return 0;
 
 }

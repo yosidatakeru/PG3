@@ -1,34 +1,36 @@
 #pragma once
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-//止めるためにインクルード
+
 #include <windows.h>
-#include<functional>
+
+
 
 
 class Enemy
 {
 public:
+	
 
-	void Inil();
+	void Initialze();
+	void Update();
 	void Attack();
 	void Shoot();
 	void Withdrawal();
-	void Update();
-private:
-	static void (Enemy::* spFuncTadle[])();
-	int enemyAction = true;
 	
-	int time = 0;
+private:
+
+	
 
 	enum enemySituation
 	{
-		Attacks = 1,
-		Shoots = 2,
-		Withdrawals = 3,
+		Attacks ,
+		Shoots ,
+		Withdrawals ,
 	};
-	enemySituation  phase_;
 	
+	enemySituation phase_ = enemySituation();
+
+	static void (Enemy::* spFuncTadle[])();
+
+
 };
 
