@@ -35,7 +35,7 @@
     <ClInclude Include="Enemy\Enemy.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="PG3_02_02\Min.h">
+    <ClInclude Include="Min.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
