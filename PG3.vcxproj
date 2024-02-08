@@ -127,15 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Action.cpp" />
+    <ClCompile Include="Attack.cpp" />
     <ClCompile Include="Enemy\Enemy.cpp" />
     <ClCompile Include="Function\Function.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Min.cpp" />
+    <ClCompile Include="withdrawal.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Action.h" />
+    <ClInclude Include="Attack.h" />
     <ClInclude Include="Enemy\Enemy.h" />
     <ClInclude Include="Function\Function.h" />
     <ClInclude Include="Min.h" />
+    <ClInclude Include="Withdrawal.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
