@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="IShape.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="IShape.h" />
+    <ClInclude Include="Rectangle.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,23 +137,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Action.cpp" />
-    <ClCompile Include="Attack.cpp" />
-    <ClCompile Include="Enemy\Enemy.cpp" />
-    <ClCompile Include="Function\Function.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Min.cpp" />
-    <ClCompile Include="withdrawal.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Action.h" />
-    <ClInclude Include="Attack.h" />
-    <ClInclude Include="Enemy\Enemy.h" />
-    <ClInclude Include="Function\Function.h" />
-    <ClInclude Include="Min.h" />
-    <ClInclude Include="Withdrawal.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

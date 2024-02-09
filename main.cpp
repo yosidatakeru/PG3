@@ -1,22 +1,28 @@
-﻿
-#include"Action.h"
-#include"Attack.h"
-#include"Withdrawal.h"
+﻿#include<stdio.h>
+#include"IShape.h"
+#include"Circle.h"
+#include"Rectangle.h"
 int main()
 {
-	const int dementors = 2;
-	Action* action[dementors];
-	action[0] = new Attack();
-	action[1] = new Withdrawal();
+	static const int AMOUNT = 2;
+	IShape* rectangle[AMOUNT] = { nullptr };
 
-	for (int i = 0; i < dementors; i++)
+	rectangle[0] = new Circle(2.0f);
+	rectangle[1] = new Rectangle(15.0f, 25.0f);
+
+	for (int i = 0; i < AMOUNT; i++)
 	{
-		action[i]->actions();
+		rectangle[i]->Size();
 	}
-		
-	for (int i = 0; i < dementors; i++)
+
+	for (int i = 0; i < AMOUNT; i++)
 	{
-		delete action[i];
+		rectangle[i]->Draw();
+	}
+
+	for (int i = 0; i < AMOUNT; i++)
+	{
+		delete rectangle[i];
 	}
 		return 0;
 }
